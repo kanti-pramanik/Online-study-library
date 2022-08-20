@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KANTILibrary</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<header>
+	<nav>
+		<div class="logo">
+			KANTI<span>Li</span>brary
+		</div>
+		<div class="menu">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Collection</a>
+			<a href="#">Contact</a>
+		</div>
+		<div class="icon">
+			<i class="fa fa-search"></i>
+			<a href="#">Login</a>
+			<a href="#">Signup</a>
+
+		</div>
+	</nav>
+
+
+	<section class="h-text">
+		<h1 data-aos="zoom-in-down" data-aos-delay="100">Educational materials available for all subject.</h1>
+		<input type="text" name="" placeholder="Search here...">
+		<button><i class="fa fa-search"></i></button>
+
+		
+	</section>
+</header>
+
+<section class="filter-gallery">
+	<div class="portfolio-menu">
+			<ul>
+				<li class="active" data-filter="*"> All</li>
+				<li data-filter=".web">Engineering</li>
+				<li data-filter=".seo">Doctor</li>
+				<li data-filter=".graphics">General</li>
+			</ul>
+		</div>
+		<div class="portfolio-item">
+			<div class="item web"  data-aos="flip-left" data-aos-offset="100" data-aos-delay="100">
+				<img src="img/p1.jpg" width="100" height="100">
+			</div>
+
+			<div class="item seo"  data-aos="flip-left" data-aos-offset="100" data-aos-delay="200">
+				<img src="img/p2.jpg" width="100" height="100">
+			</div>
+			<div class="item graphics"  data-aos="flip-left" data-aos-offset="100" data-aos-delay="300">
+				<img src="img/p3.jpg" width="100" height="100">
+			</div>
+			<div class="item web" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="100">
+				<img src="img/p4.jpg" width="100" height="100">
+			</div>
+
+			<div class="item seo" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="200">
+				<img src="img/p5.jpeg" width="100" height="100">
+			</div>
+			<div class="item seo" data-aos="zoom-in" data-aos-offset="100" data-aos-delay="300">
+				<img src="img/p6.jpg" width="100" height="100">
+			</div>
+			<div class="item graphics" data-aos="zoom-in-up" data-aos-offset="100" data-aos-delay="100">
+				<img src="img/p7.jpg" width="100" height="100">
+			</div>
+			<div class="item graphics" data-aos="zoom-in-up" data-aos-offset="100" data-aos-delay="200">
+				<img src="img/p8.jpg" width="100" height="100">
+			</div>
+			<div class="item graphics" data-aos="zoom-in-up" data-aos-offset="100" data-aos-delay="300">
+				<img src="img/p9.jpg" width="100" height="100">
+			</div>
+		</div>
+	
+</section>
+
+
+<!--- filter gallery end---->
+
+<!-- slider start--->
+
+<section class="members">
+		<div class="member-info"  data-aos="zoom-in-up" data-aos-offset="100" data-aos-delay="100">
+			<h1><span>Informations</span></h1>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quisquam optio consectetur assumenda dicta sunt dolorum, veritatis quo doloribus animi suscipit magnam, eveniet neque ratione aliquid. Id similique qui iste.</p>
+</div>
+
+<div class="m-images"  data-aos="zoom-in" data-aos-offset="100" data-aos-delay="300">
+	<img src="img/s7.jpg">
+	<img src="img/s8.jpg">
+	<img src="img/s9.jpg">
+	<img src="img/s10.jpg">
+	<img src="img/s11.jpg">
+	<img src="img/s12.jpg">
+	
+
+</div>
+</section>
+
+
+<footer>
+
+
+
+	<div class="f-contact" data-aos="zoom-in-up" data-aos-offset="200">
+		<div>
+			<h1>Information</h1>
+			<p>About</p>
+			
+			<i class="fa fa-whatsapp"></i>
+			<i class="fa fa-instagram"></i>
+			<i class="fa fa-telegram"></i>
+			<i class="fa fa-twitter"></i>
+		</div>
+
+
+		<div>
+			<h1>Useful links</h1>
+			<p>Author</p>
+			<p>Subject</p>
+			<p>Add a books</p>
+			<p>Advance Search</p>
+
+		</div>
+
+		<div>
+			<h1>Details</h1>
+			<p>Disclaimar</p>
+			<p>Contact</p>
+			<p>Sponsor</p>
+			<p>Feedback</p>
+
+		</div>
+
+		<div>
+			<h1>Help & Support</h1>
+			<p>Privacy policy</p>
+			<p>Term & conditions</p>
+			<p>Technical support</p>
+			<p>Customer care</p>
+
+		</div>
+	</div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+	$('.portfolio-item').isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+		$('.portfolio-menu ul li').click(function(){
+		$('.portfolio-menu ul li').removeClass('active');
+		$(this).addClass('active');
+
+			var selector = $(this).attr('data-filter');
+		$('.portfolio-item').isotope({
+			filter:selector
+		});
+		return false;
+	});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+</script>
+</body>
+</html>
